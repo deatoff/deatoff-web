@@ -1,16 +1,21 @@
 {
   "name": "deatoff-web",
   "version": "1.0.0",
-  "description": "",
+  "description": "deatoff is a place that fuels creativity",
+  "author": {
+    "name": "Jinma Yamashita",
+    "email": "jinmayamashita@gmail.com",
+    "url": "https://jinmayamashita.github.io"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "repository": "github:deatoff/deatoff-web",
   "main": "index.js",
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "next": "^9.1.6",
     "react": "^16.12.0",
