@@ -15,7 +15,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "storybook": "start-storybook -p 6006"
+    "storybook": "start-storybook -p 6006",
+    "test": "jest"
   },
   "dependencies": {
     "next": "^9.1.6",
@@ -27,14 +28,20 @@
     "@babel/preset-typescript": "^7.7.7",
     "@storybook/addon-actions": "^5.2.8",
     "@storybook/react": "^5.2.8",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@types/jest": "^24.0.25",
     "@types/node": "^13.1.2",
     "@types/react": "^16.9.17",
     "@zeit/next-sass": "^1.0.1",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.4.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
     "node-sass": "^4.13.0",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.1.2",
+    "ts-jest": "^24.2.0",
     "typescript": "^3.7.4"
   }
 }
