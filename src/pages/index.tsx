@@ -1,14 +1,13 @@
-import { Button, InputText } from "../components"
+import { HomePage } from "../components"
 
 const Page = () => {
   
-  const onChange = () => {}
+  const onClick = (e) => {
+    console.log(e)
+  }
 
   return (
-    <div>
-      <Button text="Welcome to Next.js!" />
-      <InputText value="Welcome to Next.js!" onChange={onChange} />
-    </div>
+    <HomePage onClick={onClick} />
   )
 }
 
