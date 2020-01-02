@@ -1,8 +1,20 @@
 import React from 'react';
+import css from "./styles.scss";
 
-type Props = { 
+export type Props = { 
   text: string;
+  onClick: (e: React.SyntheticEvent<HTMLButtonElement>) => void;
 }
 
-export const Button = (props: Props) => 
-  <button>{props.text}</button>
+export const Button = ({
+  text,
+  onClick
+}: Props) => (
+  <div>
+    <button 
+      className={css.Button}
+      onClick={onClick}>
+      {text}
+    </button>
+  </div>
+)

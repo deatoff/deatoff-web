@@ -1,9 +1,17 @@
 import React from "react"
 
-type Props = { 
-  onChange: (e: React.SyntheticEvent) => void;
+export type Props = { 
   value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const InputText: React.ComponentType<Props> = (props: Props) => 
-  <input type="text" onChange={props.onChange} value={props.value} />
+export const InputText: React.ComponentType<Props> = ({
+  value,
+  onChange
+}) => (
+  <input 
+    type="text" 
+    onChange={onChange} 
+    value={value} 
+  />
+)

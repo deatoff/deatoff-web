@@ -1,0 +1,18 @@
+// https://www.color-hex.com/color-palette/86486
+.Button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #ff8fc2;
+  letter-spacing: .15em;
+  background: #ffffff;
+  padding: .25em 1em;
+  outline: none;
+  border: 0.2em solid #73ffdf;
+
+  &:active {
+    border: 0.2em solid #ff8fc2;
+  }
+  transition: all 0.2s ease 0s;
+}
