@@ -36,6 +36,7 @@
     "@types/node": "^13.1.2",
     "@types/react": "^16.9.17",
     "@zeit/next-sass": "^1.0.1",
+    "apollo-server-micro": "^2.9.15",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.4.0",
     "identity-obj-proxy": "^3.0.0",
