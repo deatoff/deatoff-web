@@ -1,3 +1,1 @@
-const Page = () => <p>Business</p>
-
-export default Page
+export default () => <h1>Business</h1>
