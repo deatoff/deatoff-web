@@ -1,5 +1,6 @@
 // https://www.color-hex.com/color-palette/86486
 .Button {
+  overflow: hidden;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2em;
   font-weight: 900;
@@ -15,4 +16,30 @@
     border: 0.2em solid #ff8fc2;
   }
   transition: all 0.2s ease 0s;
+}
+
+.ButtonSmall {
+  @extend .Button;
+  font-size: 0.8em;
+  letter-spacing: .10em;
+  padding: .25em 1em;
+}
+
+.ButtonLoading {
+  display: inline-block;
+  font-size: 1em;
+  text-indent: 1em;
+  transform: translateX(0px);
+  animation: AIRPLANE 2s infinite both;
+}
+
+@keyframes AIRPLANE {
+  0% { 
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  100% { 
+    transform: translateX(50px);
+    opacity: 0;
+  }
 }
