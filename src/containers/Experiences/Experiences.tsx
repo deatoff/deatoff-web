@@ -1,14 +1,10 @@
-import { useQuery, useMutation } from "../../hooks"
-import { Props as ExperiencesListProps, ExperiencesList } from "./ExperiencesList"
+import css from "./styles.scss";
 
 export const Experiences = () => {
-  const { loading, data, errors } = useQuery<{experiences: ExperiencesListProps["experiences"]}>();
-  const experiences = data?.experiences
-
   return (
-    <div>
-      {/* { loading ? (<p>loading...</p>) : undefined } */}
-      { experiences ? (<ExperiencesList experiences={experiences} />) : undefined }
+    <div className={css.Experiences}>
+      <div className={css.Experiences__Left}>L</div>
+      <div className={css.Experiences__Right}>R</div>
     </div>
   )
 }

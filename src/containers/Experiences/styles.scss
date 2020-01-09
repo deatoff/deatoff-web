@@ -1,0 +1,14 @@
+.Experiences {
+  display: flex;
+  height: 100%;
+}
+
+.Experiences__Left {
+  flex-basis: 50%;
+  background: #333;
+}
+
+.Experiences__Right {
+  flex-basis: 50%;
+  background: #eee;
+}
