@@ -1,2 +1,2 @@
-import { ExperiencesContainer } from "../../containers";
-export default ExperiencesContainer;
+import { Experiences } from "../../containers";
+export default Experiences;

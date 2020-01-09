@@ -1,1 +1,1 @@
-export { ExperiencesContainer } from "./ExperiencesContainer"
+export { Experiences } from "./Experiences"

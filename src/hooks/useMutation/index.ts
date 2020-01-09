@@ -1,14 +1,12 @@
 import { useGraphQL } from 'graphql-react'
 
-export const useMutation = (query) => {
+export const useMutation = (operation) => {
   const { load, loading } = useGraphQL({
     fetchOptionsOverride(options) {
       options.url = 'http://localhost:3000/api/graphql'
     },
     //@ts-ignore
-    operation: {
-      query,
-    },
+    operation,
     loadOnMount: false,
     loadOnReload: false,
     loadOnReset: false,

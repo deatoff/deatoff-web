@@ -1,6 +1,7 @@
 import { useGraphQL } from 'graphql-react'
 
 export const useQuery = <T>() => {
+  // @TODO: make a params
   const skip = 0;
   const limit = 10;
 
@@ -8,7 +9,6 @@ export const useQuery = <T>() => {
     fetchOptionsOverride(options) {
       options.url = 'http://localhost:3000/api/graphql'
     },
-    // @see `const experiences` in `/pages/api/graphql`
     operation: {
       variables: { skip , limit },
       query:`
@@ -27,14 +27,7 @@ export const useQuery = <T>() => {
     loadOnReset: true,
   })
 
-  // console.log(cacheValue)
-  
   const data = cacheValue?.data
-
-  // const data = {
-  //   experiences: []
-  // }
-
   const errors = {
     ...cacheValue?.httpError,
     ...cacheValue?.graphQLErrors
