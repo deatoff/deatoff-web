@@ -1,5 +1,5 @@
-import { useQuery, useMutation } from "../../hooks"
-import { Props as ExperiencesListProps, ExperiencesList } from "./ExperiencesList"
+import { useQuery, useMutation } from "../../../hooks"
+import { Props as ExperiencesListProps, ExperiencesList } from "./___ExperiencesList"
 
 export const Experiences = () => {
   const { loading, data, errors } = useQuery<{experiences: ExperiencesListProps["experiences"]}>();

@@ -1,5 +1,5 @@
-import { useMutation } from "../../hooks"
-import { Button } from "../../components"
+import { useMutation } from "../../../hooks"
+import { Button } from "../../../components"
 
 type Props = {
   e: {

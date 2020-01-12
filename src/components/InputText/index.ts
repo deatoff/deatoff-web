@@ -1,4 +1,4 @@
-import { Props, InputText } from "./InputText"
+import { Props, InputText } from "./InputText";
 
-export type InputTextProps = Props
-export { InputText }
+export type InputTextProps = Props;
+export { InputText };

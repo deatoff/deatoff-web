@@ -1,17 +1,23 @@
-import { useGraphQL } from 'graphql-react'
+import {
+  useGraphQL,
+  GraphQLOperation
+} from "graphql-react";
+import { GraphQLURL } from "../constants";
 
-export const useMutation = (operation) => {
-  const { load, loading } = useGraphQL({
+export const useMutation = <O, R>(
+  operation: GraphQLOperation<O>
+) => {
+  const { load, loading } = useGraphQL<R, O>({
     fetchOptionsOverride(options) {
-      options.url = 'http://localhost:3000/api/graphql'
+      // eslint-disable-next-line functional/no-expression-statement, functional/immutable-data, no-param-reassign
+      options.url = GraphQLURL;
     },
-    //@ts-ignore
     operation,
     loadOnMount: false,
     loadOnReload: false,
     loadOnReset: false,
-    reloadOnLoad: true,
-  })
-  
-  return { load, loading }
-}
+    reloadOnLoad: true
+  });
+
+  return { load, loading };
+};

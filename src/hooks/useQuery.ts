@@ -1,36 +1,26 @@
-import { useGraphQL } from 'graphql-react'
+import { useGraphQL, GraphQLOperation } from "graphql-react";
+import { GraphQLURL } from "../constants";
 
-export const useQuery = <T>() => {
-  // @TODO: make a params
-  const skip = 0;
-  const limit = 10;
-
-  const { loading, cacheValue } = useGraphQL<T, {skip: number, limit: number}>({
+export const useQuery = <O, R>(operation: GraphQLOperation<O>) => {
+  const { loading, cacheValue } = useGraphQL<R, O>({
     fetchOptionsOverride(options) {
-      options.url = 'http://localhost:3000/api/graphql'
+      // eslint-disable-next-line functional/no-expression-statement, functional/immutable-data, no-param-reassign
+      options.url = GraphQLURL;
     },
-    operation: {
-      variables: { skip , limit },
-      query:`
-      query {
-        experiences(skip: ${skip}, limit: ${limit}) {
-          id
-          title
-          author
-          remixed
-        }
-      }
-      `,
-    },
+    operation,
     loadOnMount: true,
     loadOnReload: true,
-    loadOnReset: true,
-  })
+    loadOnReset: true
+  });
 
-  const data = cacheValue?.data
+  const data = cacheValue?.data;
   const errors = {
     ...cacheValue?.httpError,
     ...cacheValue?.graphQLErrors
-  }
-  return { loading, data, errors }
-}
+  };
+  return {
+    loading,
+    data,
+    errors
+  };
+};

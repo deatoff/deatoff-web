@@ -1,42 +1,50 @@
-import React from "react"
+import React from "react";
 import css from "./styles.scss";
 
-export type Props = { 
-  name: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  hasError: boolean;
-  showLabel?: boolean;
-  required?: boolean;
-}
+export type Props = {
+  readonly name: string;
+  readonly value: string;
+  readonly onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  readonly hasError?: boolean;
+  readonly showLabel?: boolean;
+  readonly required?: boolean;
+};
 
-export const InputText: React.ComponentType<Props> = ({
+export const InputText = ({
   name,
   showLabel = true,
   value,
   onChange,
   hasError = false,
   required
-}) => {
+}: Props) => {
   return (
     <>
-      {
-        showLabel ? 
-        (<label 
+      {showLabel ? (
+        <label
           className={hasError ? css.ErrorLabel : css.Label}
-          htmlFor={name}>
-            { required ? (<i>*</i>) : undefined } {name}
-          </label>) :
+          htmlFor={name}
+        >
+          {required ? <i>*</i> : undefined}
+          {name}
+        </label>
+      ) : (
         undefined
-      }
-      <input 
+      )}
+      <input
         id={name}
+        name={name}
         className={hasError ? css.ErrorInput : css.Input}
-        type="text" 
-        onChange={onChange} 
-        value={value} 
+        type="text"
+        onChange={onChange}
+        value={value}
       />
-      { hasError? (<span className={css.ErrorLabel}>error</span>): undefined }
+      {hasError ? (
+        <span className={css.ErrorLabel}>error</span>
+      ) : (
+        undefined
+      )}
+      <br />
     </>
-  )
-}
+  );
+};

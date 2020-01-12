@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 import css from "./styles.scss";
 
-export type Props = { 
+export type Props = {
   size?: "large" | "small";
   loading?: boolean;
   text: string;
   onClick: (e: React.SyntheticEvent<HTMLButtonElement>) => void;
-}
+};
 
 export const Button = ({
   size = "large",
@@ -15,13 +15,12 @@ export const Button = ({
   onClick
 }: Props) => (
   <div>
-    <button 
+    <button
       className={size === "large" ? css.Button : css.ButtonSmall}
-      onClick={onClick}>
-        {text} 
-        <span className={css.ButtonLoading}>
-          {loading ? "✈" : undefined}
-        </span>
+      onClick={onClick}
+    >
+      {text}
+      <span className={css.ButtonLoading}>{loading ? "✈" : undefined}</span>
     </button>
   </div>
-)
+);
