@@ -1,0 +1,16 @@
+.List {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+
+  > * {
+    padding: 1em;
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 1px 1px 6px rgba(0,0,0,.1);
+    
+    &:not(:first-of-type) {
+      margin-top: 1em;
+    }
+  }
+}

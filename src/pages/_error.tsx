@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import { ErrorProps, ErrorContainer } from "../containers"
 
 type Props  = {
-  statusCode: ErrorProps["statusCode"]
+  readonly statusCode: ErrorProps["statusCode"]
 }
 
 const Error: NextPage<Props> = ({ statusCode }: Props) => 

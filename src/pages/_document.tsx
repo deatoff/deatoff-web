@@ -103,7 +103,10 @@ export default class DeatOffDocument extends Document {
     return (
       <html>
         <Head>
-          <meta name='viewport' content='width=device-width, initial-scale=1' />
+          <meta
+            name='viewport'
+            content='width=device-width, initial-scale=1'
+          />
           <meta charSet='utf-8' />
           <style type='text/css'>{globalStyles}</style>
         </Head>

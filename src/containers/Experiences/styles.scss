@@ -1,0 +1,27 @@
+.Experiences {
+  display: flex;
+  height: 100%;
+
+  &__Left {
+    flex-basis: 50%;
+    background: #f4f4f4;
+  }
+
+  &__Right {
+    flex-basis: 50%;
+    background: #eee;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__Pre {
+    color: #333;
+    font-family: menlo;
+    font-size: 11px;
+  }
+  
+  &__Form {
+    background: #fff;
+    padding: 1em;
+  }
+}

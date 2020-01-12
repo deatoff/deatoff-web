@@ -1,0 +1,36 @@
+.Label {
+  // text-indent: 1em;
+  font-size: 12px;
+  color: #b6b3b3;
+  text-transform: capitalize;
+  &:not(:first-of-type) {
+    margin-top: 1em;
+  }
+
+  i {
+    color: red;
+    font-size: 11px;
+  }
+}
+.ErrorLabel {
+  @extend .Label;
+  color: red;
+}
+.Input {
+  font-size: 14px;
+  width: 100%;
+  color: #999;
+  background: #f7f7f7;
+  outline: none;
+  border-radius: 2px;
+  border: 0;
+  padding: 0.25em 1em;
+  
+  &:focus {
+    color: #333;
+  }
+}
+.ErrorInput {
+  @extend .Input;
+  border: 1px solid red;
+}

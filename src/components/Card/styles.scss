@@ -1,0 +1,11 @@
+.Card {
+  > *:first-child {
+    color: #8c99a6;
+    font-size: small;
+  }
+
+  > *:nth-child(2) {
+    color: #545b63;
+    font-size: large;
+  }
+}

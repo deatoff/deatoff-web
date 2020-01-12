@@ -1,46 +1,34 @@
-import React from 'react'
+import css from "./styles.scss";
+import {
+  Props as ExperiencesFormProps,
+  ExperiencesForm
+} from "./ExperiencesForm";
 
-type Experience = {
-  id: string;
-  title: string;
-  remixed: boolean;
-}
-export type Props = {
-  loading: boolean;
-  experiences: Experience[]
-  errors: {}
-}
+type Props = {
+  readonly experiences: readonly any[];
+} & ExperiencesFormProps;
 
-export const Experiences = ({ 
-  loading,
+export const Experiences = ({
   experiences,
-  errors
+  values,
+  onChangeInput,
+  onSubmit
 }: Props) => {
   return (
-    <>
-      { loading ? "Loading..." : undefined }
-      <div>
-        <p>experiences:</p>
-        { experiences ? JSON.stringify(experiences) : undefined }
+    <div className={css.Experiences}>
+      <div className={css.Experiences__Left}>
+        <ExperiencesForm
+          className={css.Experiences__Form}
+          values={values}
+          onSubmit={onSubmit}
+          onChangeInput={onChangeInput}
+        />
       </div>
-      <div>
-        <p>errors:</p>
-        { errors ? JSON.stringify(errors) : undefined }
+      <div className={css.Experiences__Right}>
+        <pre className={css.Experiences__Pre}>
+          {JSON.stringify(experiences, null, 2)}
+        </pre>
       </div>
-      <style jsx>{`
-        div {
-          width: 400px;
-          background: #eee;
-          padding: 1em;
-          font-family: menlo;
-          font-size: 12px;
-          margin: 30px auto;
-        }
-        p {
-          font-weight: bold;
-          margin-bottom: 10px;
-        }
-      `}</style>
-    </>
-  )
-}
+    </div>
+  );
+};
