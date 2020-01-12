@@ -1,6 +1,3 @@
 {
-  "scope": "deatoff",
-  "env": {
-    "GRAPHQL_URL": "@graphql-url"
-  }
+  "scope": "deatoff"
 }
