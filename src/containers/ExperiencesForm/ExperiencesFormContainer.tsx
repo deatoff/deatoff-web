@@ -2,10 +2,7 @@
 import React from "react";
 // import { useGraphQL } from 'graphql-react'
 import { useField, useForm } from "../../hooks";
-import {
-  Props as ExperiencesFormProps,
-  ExperiencesForm
-} from "./ExperiencesForm";
+import { ExperiencesForm } from "./ExperiencesForm";
 
 export const ExperiencesFormContainer = () => {
   const titleField = useField({
@@ -17,8 +14,6 @@ export const ExperiencesFormContainer = () => {
     name: "author",
     initialValue: "Frédéric Chopin"
   });
-
-  const operationName = "name";
 
   const { onSubmit } = useForm({
     operation: {
@@ -33,7 +28,8 @@ export const ExperiencesFormContainer = () => {
       `
     },
     onFieldError(e) {
-      console.log(e);
+      // console.log(e);
+      // eslint-disable-next-line functional/no-expression-statement
       titleField.addError(e);
     }
   });
