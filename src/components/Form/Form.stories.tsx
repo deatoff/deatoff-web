@@ -1,7 +1,8 @@
+/* eslint-disable functional/no-expression-statement */
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { Form } from './Form';
-import { InputText } from '../../components';
+import { InputText } from "..";
 
 export default {
   component: Form,
@@ -12,11 +13,20 @@ export const withInput = () => (
   <Form 
     onSubmit={e => {
     e.preventDefault()
-    action('onSubmit')()
-  }}>
+    action('onSubmit')
+  }}
+  >
     <>
-      <InputText value="name" onChange={action("onChangeName")} />
-      <InputText value="address" onChange={action("onChangeAddress")} />
+      <InputText
+        name="name"
+        value="name"
+        onChange={action("onChangeName")}
+      />
+      <InputText
+        name="address"
+        value="address"
+        onChange={action("onChangeAddress")}
+      />
     </>
   </Form>
 );

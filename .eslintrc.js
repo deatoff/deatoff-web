@@ -12,6 +12,15 @@ module.exports = {
     "functional"
   ],
   rules: {
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        devDependencies: [
+          ".storybook/**",
+          "src/**/*.stories.tsx"
+        ]
+      }
+    ],
     // https://github.com/eslint/eslint/issues/2321#issuecomment-134665757
     "@typescript-eslint/no-unused-vars": ["error", {
       "args": "all", "argsIgnorePattern": "^_"
@@ -26,6 +35,7 @@ module.exports = {
 
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error",
+    "prettier/prettier": "error", 
     // "prettier/prettier": ["error", 
     // {}, { 
     //     "usePrettierrc": false
@@ -38,8 +48,8 @@ module.exports = {
     "react/react-in-jsx-scope": "off",
 
     // https://github.com/prettier/prettier/issues/2778
-    "react/jsx-first-prop-new-line": ["error", "multiline"],
-    "react/jsx-max-props-per-line": ["error", { "maximum": 1 }],
+    // "react/jsx-first-prop-new-line": ["error", "multiline"],
+    // "react/jsx-max-props-per-line": ["error", { "maximum": 1 }],
 
     // "no-array-mutation": [2, "ignore-new-array"],
   },

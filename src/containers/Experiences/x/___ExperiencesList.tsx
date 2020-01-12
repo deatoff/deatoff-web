@@ -1,15 +1,15 @@
-import { List, Card } from "../../components"
+import { List, Card } from "../../../components"
 import { UpdateButton } from "./UpdateButton"
 
 type Experience = {
-  id: string;
-  title: string;
-  author: string;
-  remixed: boolean;
+  readonly id: string;
+  readonly title: string;
+  readonly author: string;
+  readonly remixed: boolean;
 }
 
 export type Props = {
-  experiences: Experience[]
+  readonly experiences: readonly Experience[]
 }
 export const ExperiencesList = ({
   experiences
@@ -31,8 +31,7 @@ export const ExperiencesList = ({
                 />
               </li>
             )
-          ) 
-        }
+          )}
       </>
     </List>
   )

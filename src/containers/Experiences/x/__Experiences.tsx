@@ -1,14 +1,25 @@
-import { useQuery, useMutation } from "../../../hooks"
-import { Props as ExperiencesListProps, ExperiencesList } from "./___ExperiencesList"
+// import { useQuery } from "../../../hooks";
+// import {
+//   Props as ExperiencesListProps,
+//   ExperiencesList
+// } from "./___ExperiencesList";
 
-export const Experiences = () => {
-  const { loading, data, errors } = useQuery<{experiences: ExperiencesListProps["experiences"]}>();
-  const experiences = data?.experiences
+// export const Experiences = () => {
+//   const { data } = useQuery<
+//     {
+//       readonly experiences: ExperiencesListProps["experiences"];
+//     },
+//     An argument for '' was not provided.
+//     {
+//       readonly query: any;
+//     }
+//   >();
+//   const experiences = data?.experiences;
 
-  return (
-    <div>
-      {/* { loading ? (<p>loading...</p>) : undefined } */}
-      { experiences ? (<ExperiencesList experiences={experiences} />) : undefined }
-    </div>
-  )
-}
+//   return (
+//     <div>
+//       {/* { loading ? (<p>loading...</p>) : undefined } */}
+//       {experiences ? <ExperiencesList experiences={experiences} /> : undefined}
+//     </div>
+//   );
+// };

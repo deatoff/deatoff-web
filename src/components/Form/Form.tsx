@@ -2,9 +2,11 @@ import React from 'react';
 import css from "./styles.scss";
 
 export type Props = {
-  children: React.ReactChild
-  onSubmit: (e: React.SyntheticEvent<HTMLFormElement>) => void;
-  submitText?: string;
+  readonly children: React.ReactChild
+  // eslint-disable-next-line functional/no-mixed-type
+  readonly onSubmit: (e: React.SyntheticEvent<HTMLFormElement>) => void;
+  // eslint-disable-next-line functional/no-mixed-type
+  readonly submitText?: string;
 }
 
 export const Form = ({

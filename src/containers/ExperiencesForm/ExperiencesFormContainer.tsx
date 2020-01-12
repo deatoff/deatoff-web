@@ -1,37 +1,42 @@
-//@ts-nocheck
-import React from 'react'
+// @ts-nocheck
+import React from "react";
 // import { useGraphQL } from 'graphql-react'
-import { useField, useForm } from "../../hooks"
-import { Props as ExperiencesFormProps, ExperiencesForm } from "./ExperiencesForm"
+import { useField, useForm } from "../../hooks";
+import {
+  Props as ExperiencesFormProps,
+  ExperiencesForm
+} from "./ExperiencesForm";
 
 export const ExperiencesFormContainer = () => {
   const titleField = useField({
-    //@ts-ignore
-    name: "title", initialValue: false
-  })
-  const authorField = useField({ 
-    name: "author", initialValue: "Frédéric Chopin"
-  })
+    // @ts-ignore
+    name: "title",
+    initialValue: false
+  });
+  const authorField = useField({
+    name: "author",
+    initialValue: "Frédéric Chopin"
+  });
 
-  const operationName = 'name'
-  
+  const operationName = "name";
+
   const { onSubmit } = useForm({
     operation: {
       variables: { title: titleField.value, author: authorField.value },
       query: /* GraphQL */ `
-      mutation($title: String!, $author: String!){
-        createExperience (title: $title, author: $author) {
-          title
-          author
+        mutation($title: String!, $author: String!) {
+          createExperience(title: $title, author: $author) {
+            title
+            author
+          }
         }
-      }
       `
     },
     onFieldError(e) {
-      console.log(e)
-      titleField.addError(e)
+      console.log(e);
+      titleField.addError(e);
     }
-  })
+  });
 
   // const { formRef, message, loading, success, onSubmit } = useForm({
   // const { onSubmit } = useForm({
@@ -62,5 +67,5 @@ export const ExperiencesFormContainer = () => {
       authorField={authorField}
       onSubmit={onSubmit}
     />
-  )
-}
+  );
+};
