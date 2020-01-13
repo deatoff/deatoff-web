@@ -5,10 +5,15 @@ import { AppProps } from "next/app";
 import { GraphQLProvider, GraphQLContext } from "graphql-react";
 import { withGraphQLApp } from "next-graphql-react";
 
-const App = ({ Component, pageProps, graphql }: AppProps<{}> & {
-  graphql: typeof GraphQLContext
+const App = ({
+  Component,
+  pageProps,
+  graphql
+}: AppProps<{}> & {
+  readonly graphql: typeof GraphQLContext;
 }) => (
   <GraphQLProvider graphql={graphql}>
+    {/* eslint-disable-next-line react/jsx-props-no-spreading */}
     <Component {...pageProps} />
   </GraphQLProvider>
 );

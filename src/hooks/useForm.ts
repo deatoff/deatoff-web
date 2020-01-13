@@ -1,17 +1,26 @@
-import { useReducer } from "react";
+import React from "react";
 import { useMutation } from "./useMutation";
-import { pipe } from "../functions/pipe";
 
-const reducerFunc = <T>() => (
-  state: T,
-  action: {
-    readonly type: string;
-    readonly payload: T;
+type State<T> = T;
+type Action<T> = {
+  readonly type: string;
+  // #TODO: We're researching the payload type
+  readonly payload?: any;
+};
+
+const reducerFunc = <T>(_: void) => (state: State<T>, action: Action<T>) => {
+  // eslint-disable-next-line functional/no-conditional-statement
+  switch (action.type) {
+    case "FILL":
+    case "RESET":
+      return {
+        ...state,
+        ...action.payload
+      };
+    default:
+      return state;
   }
-) =>
-  action.type
-    ? { ...state, [action.type]: action.payload }
-    : state;
+};
 
 export const useForm = <T>({
   initialValues,
@@ -21,43 +30,30 @@ export const useForm = <T>({
   readonly query: string;
 }) => {
   const initialState = initialValues;
-  const reducer = reducerFunc();
-  const [values, dispatch] = useReducer(
-    reducer,
-    initialState
-  );
+  const reducer = reducerFunc<T>();
+  const [values, dispatch] = React.useReducer(reducer, initialState);
 
   const { load } = useMutation<any, T>({
-    variables: { ...(values as object) },
+    variables: { ...((values as unknown) as object) },
     query
   });
 
-  const handleSubmit = pipe(
-    (e: React.SyntheticEvent) =>
-      e.preventDefault(),
-    load
-  );
+  const handleSubmit = (_: void) => {
+    // eslint-disable-next-line functional/no-expression-statement
+    load();
+    // eslint-disable-next-line functional/no-expression-statement
+    dispatch({ type: "RESET", payload: initialValues });
+  };
 
-  const handleChangeCheckBox = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) =>
+  const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) =>
     dispatch({
-      type: e.target.name,
-      payload: e.target.checked
-    });
-
-  const handleChangeInput = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) =>
-    dispatch({
-      type: e.target.name,
-      payload: e.target.value
+      type: "FILL",
+      payload: { [e.target.name]: e.target.value }
     });
 
   return {
     values,
     handleSubmit,
-    handleChangeInput,
-    handleChangeCheckBox
+    handleChangeInput
   };
 };

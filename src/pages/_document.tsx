@@ -34,7 +34,7 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
-	line-height: 1;
+  line-height: 1;
 }
 
 ol, ul {
@@ -86,7 +86,8 @@ html {
 }
 
 body {
-  color: #090c2d;
+  color: #586069;
+  background: #f6f8fa;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

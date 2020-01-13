@@ -19,26 +19,32 @@ export const experiences = [
   {
     id: "E9969866435",
     title: "ανcιλλαε ηασ",
-    author: "foo",
+    author: "foo_xy4SGQF1",
     remixed: false
+  }
+]
+export const experiences2 = [
+  {
+    id: "E9969866435",
+    title: "ανcιλλαε ηασ",
+    author: "foo_xy4SGQF1"
   },
   {
     id: "E8448280933",
     title: "qθεμ μοvετ οφφιcιισ ναμ τε",
-    author: "bar",
-    remixed: true
+    author: "foo_xy4SGQF1"
   },
   {
     id: "E8684468611",
     title: "εξ qθι σολθμ εvερτι, αδ",
-    author: "baz",
-    remixed: false
+    author: "bar_nz5SOQE2"
   }
 ];
 
 const typeDefs = gql`
   type Mutation {
     createExperience(title: String!, author: String!): Experience
+    createPiece(title: String!, author: String!): Experience
     updateExperience(
       id: ID!
       title: String
@@ -47,7 +53,12 @@ const typeDefs = gql`
     ): Experience
   }
   type Query {
-    experiences(skip: Int, limit: Int): [Experience]
+    userPieces(skip: Int, limit: Int): [Experience]
+  }
+  type Piece {
+    id: ID!
+    title: String
+    author: String
   }
   type Experience {
     id: ID!
@@ -64,10 +75,10 @@ const resolvers = {
      * @param { skip = 0, limit }: args
      * @param param2: context
      */
-    experiences(_, { skip = 0, limit }) {
+    userPieces(_, { skip = 0, limit }) {
       return limit
-        ? experiences.slice(skip, skip + limit)
-        : experiences.slice(skip);
+        ? experiences2.slice(skip, skip + limit)
+        : experiences2.slice(skip);
     }
   },
   Mutation: {
@@ -75,7 +86,7 @@ const resolvers = {
      * @param _: parent
      * @param { title, author } : args
      */
-    createExperience(_, { title, author }) {
+    createPiece(_, { title, author }) {
       if (title === "foo") {
         throw new UserInputError("Form Arguments invalid", {
           invalidFields: ["title"]
@@ -87,9 +98,11 @@ const resolvers = {
         author,
         remixed: false
       };
-      experiences.push(experience);
+      experiences2.push(experience);
       return experience;
     },
+
+    
     async updateExperience(_, { id, title, author, remixed }) {
       await timeout(2000);
       const idx = experiences.findIndex(

@@ -1,11 +1,3 @@
-import { HomePage } from "../components";
+import { Home } from "../containers";
 
-const Page = () => {
-  const onClick = _e => {
-    return null;
-  };
-
-  return <HomePage onClick={onClick} />;
-};
-
-export default Page;
+export default Home;

@@ -3,8 +3,10 @@ module.exports = {
   extends: [
     "airbnb-typescript",
     "plugin:functional/recommended",
+    "plugin:react/recommended",
     "prettier",
-    "prettier/@typescript-eslint"
+    "prettier/@typescript-eslint",
+    
   ],
   plugins: [
     "react-hooks",
@@ -12,6 +14,17 @@ module.exports = {
     "functional"
   ],
   rules: {
+    "functional/no-return-void": "off",
+    "@typescript-eslint/explicit-function-return-type": "error",
+    // "@typescript-eslint/explicit-function-return-type": [
+    //   "error",
+    //   { allowTypedFunctionExpressions: true }
+    // ],
+    "jsx-a11y/label-has-associated-control": ["error", {
+      "required": {
+        "every": [ "id" ]
+      }
+    }],
     "import/no-extraneous-dependencies": [
       "error",
       {
@@ -53,6 +66,7 @@ module.exports = {
   //   // "react/jsx-max-props-per-line": ["error", { "maximum": 1 }],
 
   //   // "no-array-mutation": [2, "ignore-new-array"],
+  
   },
   // overrides: [
   //   {
