@@ -14,6 +14,7 @@ module.exports = {
     "functional"
   ],
   rules: {
+    "functional/no-mixed-type": "off",
     "functional/no-return-void": "off",
     "@typescript-eslint/explicit-function-return-type": "error",
     // "@typescript-eslint/explicit-function-return-type": [

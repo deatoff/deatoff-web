@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { Button } from "../../components/src";
 
 // piece of art
 type Piece = {
@@ -15,12 +16,18 @@ type Props = {
 export const Home: React.ComponentType<Props> = ({
   className,
   pieces
-}: Props) => (
-  <div className={className}>
-    {pieces.map(({ id, title }) => (
-      <Link key={id} href={`/p/${id}`}>
-        {title}
-      </Link>
-    ))}
-  </div>
-);
+}: Props) => {
+  const onClick = _e => {
+    console.log(8);
+  };
+  return (
+    <div className={className}>
+      <Button onClick={onClick}>Hello</Button>
+      {pieces.map(({ id, title }) => (
+        <Link key={id} href={`/p/${id}`}>
+          {title}
+        </Link>
+      ))}
+    </div>
+  );
+};

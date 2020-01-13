@@ -1,0 +1,4 @@
+[submodule "src/components"]
+	path = src/components
+	url = git@github.com:deatoff/deatoff-react-components.git
+	branch = master
