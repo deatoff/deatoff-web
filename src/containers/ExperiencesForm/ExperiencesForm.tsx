@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from "react";
-import { FormProps, Form, InputTextProps, InputText } from "../../components";
+import { FormProps, Form, InputText } from "../../components";
 
 export type Props = {
   // @TODO set nameField type annotation

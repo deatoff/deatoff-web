@@ -17,7 +17,8 @@
     "start": "next start",
     "storybook": "start-storybook -p 6006",
     "test": "jest",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./"
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./",
+    "memory-check": "tsc --diagnostics --queit --listFiles"
   },
   "dependencies": {
     "cross-fetch": "^3.0.4",

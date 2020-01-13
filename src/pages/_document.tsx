@@ -1,5 +1,5 @@
-import React from 'react'
-import Document, { Head, Main, NextScript } from 'next/document'
+import React from "react";
+import Document, { Head, Main, NextScript } from "next/document";
 
 const globalStyles = `
 /* 
@@ -96,25 +96,24 @@ body {
 #__next {
   height: 100%;
 }
-`
+`;
 
+// eslint-disable-next-line functional/no-class
 export default class DeatOffDocument extends Document {
-  render () {
+  // eslint-disable-next-line functional/functional-parameters
+  render() {
     return (
-      <html>
+      <html lang="en">
         <Head>
-          <meta
-            name='viewport'
-            content='width=device-width, initial-scale=1'
-          />
-          <meta charSet='utf-8' />
-          <style type='text/css'>{globalStyles}</style>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta charSet="utf-8" />
+          <style type="text/css">{globalStyles}</style>
         </Head>
         <body>
           <Main />
           <NextScript />
         </body>
       </html>
-    )
+    );
   }
 }

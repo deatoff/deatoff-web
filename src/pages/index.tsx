@@ -1,14 +1,11 @@
-import { HomePage } from "../components"
+import { HomePage } from "../components";
 
 const Page = () => {
-  
-  const onClick = (e) => {
-    console.log(e)
-  }
+  const onClick = _e => {
+    return null;
+  };
 
-  return (
-    <HomePage onClick={onClick} />
-  )
-}
+  return <HomePage onClick={onClick} />;
+};
 
-export default Page
+export default Page;
