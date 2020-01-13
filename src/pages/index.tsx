@@ -1,6 +1,8 @@
+import { isDev } from "../functions";
 import { Home } from "../containers";
+import { TBD } from "../sandbox/TBD";
 
 // eslint-disable-next-line functional/no-expression-statement
-console.log(process.env.NODE_ENV);
+const index = !isDev() ? Home : TBD;
 
-export default Home;
+export default index;
