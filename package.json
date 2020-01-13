@@ -40,7 +40,7 @@
     "@testing-library/react-hooks": "3.2.1",
     "@types/graphql-react": "8.1.1",
     "@types/jest": "24.0.25",
-    "@types/node": "13.1.4",
+    "@types/node": "13.1.6",
     "@types/react": "16.9.17",
     "@typescript-eslint/eslint-plugin": "2.15.0",
     "@zeit/next-sass": "1.0.1",
