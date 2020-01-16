@@ -14,21 +14,21 @@ module.exports = {
     "functional"
   ],
   rules: {
-    "@typescript-eslint/explicit-function-return-type": [
-      "error", { allowExpressions: true }
-    ],
+    "jsx-a11y/anchor-is-valid": "off",
+
+    // @TODO should we use function-return-type rule
+    "@typescript-eslint/explicit-function-return-type": "off",
+    
+    "functional/functional-parameters": "off",
     "functional/no-mixed-type": "off",
     "functional/no-return-void": "off",
-    // "@typescript-eslint/explicit-function-return-type": "error",
-    // "@typescript-eslint/explicit-function-return-type": [
-    //   "error",
-    //   { allowTypedFunctionExpressions: true }
-    // ],
+
     "jsx-a11y/label-has-associated-control": ["error", {
       "required": {
         "every": [ "id" ]
       }
     }],
+
     "import/no-extraneous-dependencies": [
       "error",
       {
@@ -39,12 +39,11 @@ module.exports = {
         ]
       }
     ],
+
     // https://github.com/eslint/eslint/issues/2321#issuecomment-134665757
     "@typescript-eslint/no-unused-vars": ["error", {
       "args": "all", "argsIgnorePattern": "^_"
     }],
-
-    
 
   //   // https://github.com/jonaskello/eslint-plugin-functional/issues/76
   //   "functional/functional-parameters": ["error", {
@@ -53,7 +52,9 @@ module.exports = {
 
   //   "react-hooks/rules-of-hooks": "error",
   //   "react-hooks/exhaustive-deps": "error",
+
     "prettier/prettier": "error", 
+
   //   // "prettier/prettier": ["error", 
   //   // {}, { 
   //   //     "usePrettierrc": false

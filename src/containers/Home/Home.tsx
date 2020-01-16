@@ -17,12 +17,12 @@ export const Home: React.ComponentType<Props> = ({
   className,
   pieces
 }: Props) => {
-  const onClick = _e => {
-    console.log(8);
-  };
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+  const onClick = (_: any) => undefined;
+
   return (
     <div className={className}>
-      {/* <Button onClick={onClick}>Hello</Button> */}
+      <Button onClick={onClick}>Hello</Button>
       {pieces.map(({ id, title }) => (
         <Link key={id} href={`/p/${id}`}>
           <a>{title}</a>
