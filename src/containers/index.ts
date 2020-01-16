@@ -1,4 +1,5 @@
 export * from "./Home";
+export * from "./Header";
 export * from "./Piece";
 export * from "./SignIn";
 export * from "./Error";
