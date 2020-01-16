@@ -2,3 +2,7 @@ next-env.d.ts
 /dist
 /node_modules
 /src/pages/api
+/src/pages/_app.tsx
+/src/pages/_document.tsx
+babel.config.js
+next.config.js

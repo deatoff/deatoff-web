@@ -22,10 +22,10 @@ export const Home: React.ComponentType<Props> = ({
   };
   return (
     <div className={className}>
-      <Button onClick={onClick}>Hello</Button>
+      {/* <Button onClick={onClick}>Hello</Button> */}
       {pieces.map(({ id, title }) => (
         <Link key={id} href={`/p/${id}`}>
-          {title}
+          <a>{title}</a>
         </Link>
       ))}
     </div>

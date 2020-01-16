@@ -1,10 +1,11 @@
 import React from "react";
+import styled from "styled-components";
 
 type Props = {
   readonly className?: string;
 };
 
-export const SignIn: React.ComponentType<Props> = ({ className }: Props) => (
+const Component: React.ComponentType<Props> = ({ className }: Props) => (
   <div className={className}>
     <form action="">
       <input type="text" placeholder="id" />
@@ -12,3 +13,9 @@ export const SignIn: React.ComponentType<Props> = ({ className }: Props) => (
     </form>
   </div>
 );
+
+export const SignIn = styled(Component)`
+  input {
+    color: red;
+  }
+`;
