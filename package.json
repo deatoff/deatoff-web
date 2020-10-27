@@ -37,7 +37,7 @@
     "@storybook/react": "5.3.1",
     "@testing-library/jest-dom": "4.2.4",
     "@testing-library/react": "9.4.0",
-    "@testing-library/react-hooks": "3.2.1",
+    "@testing-library/react-hooks": "3.4.2",
     "@types/graphql-react": "8.1.1",
     "@types/jest": "24.0.25",
     "@types/node": "13.1.6",
